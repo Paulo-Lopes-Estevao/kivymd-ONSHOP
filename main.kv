@@ -1,0 +1,93 @@
+#:set color_Blue_ton [126/255.0, 37/255.0, 217/255.0, 1]
+
+<Gerenciador>:
+    Fundo:
+        name:'login_form'
+
+<Fundo>:
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                Rectangle:
+                    source:'asset/image/Prancheta – 2.png'
+                    size: self.size
+            TelaLogin
+
+<TelaLogin>:
+    MDFloatLayout:
+        adaptive_height: True
+        adaptive_size:True
+        adaptive_width:True
+    
+        Image:
+            source:'ONSHOP/ONSHOP_developer file/Icons/Componente 11 – 3.png'
+            pos_hint: {'center_y':0.80 }
+    
+        #MDBoxLayout:
+        #    id:box1
+        #    orientation: "vertical"
+        #    adaptive_height: True
+        #    adaptive_size:True
+        #    adaptive_width:True
+        #    default_size: None, dp(48)
+        #    default_size_hint: 1, None
+        #    size_hint_y: None
+        #    height: self.minimum_height
+        #    padding: dp(48)
+        #    spacing: dp(15)
+        #    pos_hint:{'center_y':0.50}
+    
+        MDLabel:
+            text:'Seja bem vindo!'
+            halign:'center'
+            font_style: 'H3'
+            font_size: '17sp'
+            theme_text_color: 'Custom'
+            text_color: (192/255.0, 156/255.0, 217/255.0, 1)
+            pos_hint:{'center_y':0.73}
+        MDLabel:
+            text:'Faça o login para continuar.'
+            halign:'center'
+            font_style: 'H4'
+            font_size: '9sp'
+            theme_text_color: 'Custom'
+            text_color: 126/255.0, 37/255.0, 217/255.0, 1
+            pos_hint:{'center_y':0.70}
+        myInputs:
+            hint_text:'Nome do Usuário'
+            icon_right: 'account'
+            pos_hint:{'center_x':.5,'center_y':0.60}
+        myInputs:
+            id:inputtext
+            hint_text:'Password'
+            icon_right: 'eye'
+            pos_hint:{'center_x':.5,'center_y':0.48}
+    
+        MDRaisedButton:
+            id : btn_entrar
+            text:"Entrar"
+            size_hint_x:.3
+            height: "30dp"
+            md_bg_color: 126/255.0, 37/255.0, 217/255.0, 1
+            pos:root.ids.inputtext.pos
+            pos_hint:{'center_y':.4}
+    
+        MDTextButton:
+            text:'Se não tem uma conta, Cadastra-se!'
+            halign:'center'
+            font_style: 'H6'
+            font_size: '9sp'
+            custom_color: 126/255.0, 37/255.0, 217/255.0, 1
+            pos:root.ids.btn_entrar.pos
+            pos_hint:{'center_y':0.35}
+
+
+<myInputs@MDTextField>
+    size_hint_x: None
+    icon_right_color: (192/255.0, 156/255.0, 217/255.0, 1)
+    size_hint_x:.9
+    color_mode: "custom"
+    line_color_focus: 126/255.0, 37/255.0, 217/255.0, 1
+    line_anim: False 
+    helper_text_mode: "on_error"
