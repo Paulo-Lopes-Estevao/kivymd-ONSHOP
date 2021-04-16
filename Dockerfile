@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3 as building
 
 LABEL maintainer="https://github.com/Paulo-Lopes-Estevao"
 
@@ -19,4 +19,8 @@ COPY . /onshop/
 
 FROM scratch
 
-COPY . /onshop/
+WORKDIR /onshop
+
+COPY --from=building /onshop/onshop .
+
+CMD [ "python main.py -m screen:droid2,portrait || python3 main.py -m screen:droid2,portrait" ]
