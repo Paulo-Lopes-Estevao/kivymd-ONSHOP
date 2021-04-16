@@ -1,0 +1,4 @@
+Kivy==2.0.0
+Kivy-examples==2.0.0
+Kivy-Garden==0.1.4
+kivymd==0.104.1
