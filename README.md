@@ -26,11 +26,11 @@ height=540 title="">
 <br>
 <br>
 
-**** Run windows
+**Run windows**
 
 `python main.py -m screen:droid2,portrait`
 
-**** Run Linux
+**Run Linux**
 
 `python3 main.py -m screen:droid2,portrait`
 
