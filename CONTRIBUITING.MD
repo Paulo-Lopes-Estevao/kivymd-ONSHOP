@@ -12,7 +12,7 @@ txt` to install the project modules
 
 ## Docker
   
-- Run the `docker-compose up` or` docker command
+- Run the `docker build --tag onshop .` or` docker command
 build -t .`
 
 ### Codificação:
