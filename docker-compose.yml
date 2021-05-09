@@ -2,9 +2,9 @@ version: '3'
 
 services: 
   app:
-    build: .
-    command: python main.py -m screen:droid2,portrait
-    volumes: 
-      - .:/onshop
-    working_dir: /onshop
-    container_name: onshop-shopping
+      build: .
+      volumes: 
+        - .:/onshop
+      working_dir: /onshop
+      container_name: onshop_shopping
+      command: python main.py -m screen:droid2,portrait
