@@ -9,12 +9,10 @@ RUN mkdir /onshop
 
 WORKDIR /onshop
 
-VOLUME /onshop/
-
 COPY requirements.txt /onshop/
 
 RUN pip install -r requirements.txt
 
 COPY . /onshop/
 
-CMD [ "python","main.py -m screen:droid2,portrait" ]
+CMD [ "python", "main.py -m screen:droid2,portrait" ]
