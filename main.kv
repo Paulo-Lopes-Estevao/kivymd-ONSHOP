@@ -3,6 +3,8 @@
 <Gerenciador>:
     Fundo:
         name:'login_form'
+    Fundo_Register:
+        name:'register_form'
 
 <Fundo>:
     Screen:
@@ -13,6 +15,25 @@
                     source:'asset/image/Prancheta – 2.png'
                     size: self.size
             TelaLogin
+            
+<Fundo_Register>:
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                Rectangle:
+                    source:'asset/image/Prancheta – 2.png'
+                    size: self.size
+            TelaRegister
+
+
+
+
+<TelaRegister>:
+    MDFloatLayout:
+        MDRaisedButton:
+            text:'clica'
+
 
 <TelaLogin>:
     MDFloatLayout:
@@ -81,6 +102,7 @@
             custom_color: 126/255.0, 37/255.0, 217/255.0, 1
             pos:root.ids.btn_entrar.pos
             pos_hint:{'center_y':0.35}
+            on_release: root.open_register()
 
 
 <myInputs@MDTextField>

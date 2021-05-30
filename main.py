@@ -13,8 +13,16 @@ class Gerenciador(ScreenManager):
 class Fundo(Screen):
     pass
 
-class TelaLogin(Screen):
+class Fundo_Register(Screen):
     pass
+
+class TelaLogin(Screen):
+    def open_register(self):
+        self.add_widget(Fundo_Register())
+
+class TelaRegister(Screen):
+    pass
+
 
 class Main(MDApp):
     def build(self):
