@@ -10,7 +10,7 @@ Window.size=(320,600)
 class Gerenciador(ScreenManager):
     pass
 
-class Fundo(Screen):
+class Fundo_Login(Screen):
     pass
 
 class Fundo_Register(Screen):
@@ -18,10 +18,12 @@ class Fundo_Register(Screen):
 
 class TelaLogin(Screen):
     def open_register(self):
-        self.add_widget(Fundo_Register())
+        #self.add_widget(Fundo_Register())
+        self.remove_widget(Fundo_Login())
 
 class TelaRegister(Screen):
-    pass
+   def open_login(self):
+    self.add_widget(Fundo_Login())
 
 
 class Main(MDApp):
