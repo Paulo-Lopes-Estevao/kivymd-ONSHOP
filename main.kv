@@ -1,144 +1,149 @@
 #:set color_Blue_ton [126/255.0, 37/255.0, 217/255.0, 1]
 
-<Gerenciador>:
-    Fundo_Login:
-        name:'login_form'
-    Fundo_Register:
-        name:'register_form'
-
-<Fundo_Login>:
-    Screen:
-        BoxLayout:
-            orientation: 'vertical'
-            canvas:
-                Rectangle:
-                    source:'asset/image/Prancheta – 2.png'
-                    size: self.size
-            TelaLogin
-            
-<Fundo_Register>:
-    Screen:
-        BoxLayout:
-            orientation: 'vertical'
-            canvas:
-                Rectangle:
-                    source:'asset/image/Prancheta – 2.png'
-                    size: self.size
-            TelaRegister
-
-
-
-
-<TelaRegister>:
-    MDFloatLayout:
-        adaptive_height: True
-        adaptive_size:True
-        adaptive_width:True
-
-        Image:
-            source:'ONSHOP/ONSHOP_developer file/Icons/Componente 11 – 3.png'
-            pos_hint: {'center_y':0.83 }
-
-        myLabes:
-            text:'Novo Usuário!'
-            font_style: 'H3'
-            font_size: '17sp'
-            text_color: (192/255.0, 156/255.0, 217/255.0, 1)
-            pos_hint:{'center_y':0.76}
-            
-        myLabes:
-            text:'Desfrute dos nossos serviços'
-            font_style: 'H4'
-            font_size: '9sp'
-            text_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos_hint:{'center_y':0.72}
-
-        myInputs:
-            hint_text:'Nome do Usuário'
-            icon_right: 'account'
-            pos_hint:{'center_x':.5,'center_y':0.65}
-        
-        myInputs:
-            hint_text:'Seu Email'
-            icon_right: 'email'
-            pos_hint:{'center_x':.5,'center_y':0.55}
-
-        myInputs:
-            id:inputtex
-            hint_text:'Password'
-            icon_right: 'eye'
-            pos_hint:{'center_x':.5,'center_y':0.45}
-
-        MDRaisedButton:
-            id : btn_entra
-            text:"Cadastrar"
-            size_hint_x:.3
-            height: "30dp"
-            md_bg_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos:root.ids.inputtex.pos
-            pos_hint:{'center_y':.4}
-
-        MDTextButton:
-            text:'Já possui uma conta'
-            halign:'center'
-            font_style: 'H6'
-            font_size: '9sp'
-            custom_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos:root.ids.btn_entra.pos
-            pos_hint:{'center_y':0.35}
-            on_release: root.open_login()
+ScreenManager:
+    TelaLogin:
+    TelaRegister:
 
 
 <TelaLogin>:
-    MDFloatLayout:
-        adaptive_height: True
-        adaptive_size:True
-        adaptive_width:True
-    
-        Image:
-            source:'ONSHOP/ONSHOP_developer file/Icons/Componente 11 – 3.png'
-            pos_hint: {'center_y':0.80 }
+    name: 'fundo_login'
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                Rectangle:
+                    source:'asset/image/Prancheta – 2.png'
+                    size: self.size
+            MDFloatLayout:
+                adaptive_height: True
+                adaptive_size:True
+                adaptive_width:True
 
-        myLabes:
-            text:'Seja bem vindo!'
-            font_style: 'H3'
-            font_size: '17sp'
-            text_color: (192/255.0, 156/255.0, 217/255.0, 1)
-            pos_hint:{'center_y':0.73}
-        myLabes:
-            text:'Faça o login para continuar.'
-            font_style: 'H4'
-            font_size: '9sp'
-            text_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos_hint:{'center_y':0.70}
-        myInputs:
-            hint_text:'Nome do Usuário'
-            icon_right: 'account'
-            pos_hint:{'center_x':.5,'center_y':0.60}
-        myInputs:
-            id:inputtext
-            hint_text:'Password'
-            icon_right: 'eye'
-            pos_hint:{'center_x':.5,'center_y':0.48}
-    
-        MDRaisedButton:
-            id : btn_entrar
-            text:"Entrar"
-            size_hint_x:.3
-            height: "30dp"
-            md_bg_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos:root.ids.inputtext.pos
-            pos_hint:{'center_y':.4}
-    
-        MDTextButton:
-            text:'Se não tem uma conta, Cadastra-se!'
-            halign:'center'
-            font_style: 'H6'
-            font_size: '9sp'
-            custom_color: 126/255.0, 37/255.0, 217/255.0, 1
-            pos:root.ids.btn_entrar.pos
-            pos_hint:{'center_y':0.35}
-            on_release: root.open_register()
+                Image:
+                    source:'ONSHOP/ONSHOP_developer file/Icons/Componente 11 – 3.png'
+                    pos_hint: {'center_y':0.80 }
+
+                myLabes:
+                    text:'Seja bem vindo!'
+                    font_style: 'H3'
+                    font_size: '17sp'
+                    text_color: (192/255.0, 156/255.0, 217/255.0, 1)
+                    pos_hint:{'center_y':0.73}
+                myLabes:
+                    text:'Faça o login para continuar.'
+                    font_style: 'H4'
+                    font_size: '9sp'
+                    text_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos_hint:{'center_y':0.70}
+                myInputs:
+                    hint_text:'Nome do Usuário'
+                    icon_right: 'account'
+                    pos_hint:{'center_x':.5,'center_y':0.60}
+                myInputs:
+                    id:inputtext
+                    hint_text:'Password'
+                    icon_right: 'eye'
+                    pos_hint:{'center_x':.5,'center_y':0.48}
+
+                MDRaisedButton:
+                    id : btn_entrar
+                    text:"Entrar"
+                    size_hint_x:.3
+                    height: "30dp"
+                    md_bg_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos:root.ids.inputtext.pos
+                    pos_hint:{'center_y':.4}
+
+                MDTextButton:
+                    text:'Se não tem uma conta, Cadastra-se!'
+                    halign:'center'
+                    font_style: 'H6'
+                    font_size: '9sp'
+                    custom_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos:root.ids.btn_entrar.pos
+                    pos_hint:{'center_y':0.35}
+                    on_press: 
+                        root.manager.current = 'fundo_register'
+                        root.manager.transition.direction = 'down'
+
+
+
+
+
+
+
+
+
+
+            
+
+<TelaRegister>:
+    name: 'fundo_register'
+    Screen:
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                Rectangle:
+                    source:'asset/image/Prancheta – 2.png'
+                    size: self.size
+            MDFloatLayout:
+                adaptive_height: True
+                adaptive_size:True
+                adaptive_width:True
+                Image:
+                    source:'ONSHOP/ONSHOP_developer file/Icons/Componente 11 – 3.png'
+                    pos_hint: {'center_y':0.83 }
+                myLabes:
+                    text:'Novo Usuário!'
+                    font_style: 'H3'
+                    font_size: '17sp'
+                    text_color: (192/255.0, 156/255.0, 217/255.0, 1)
+                    pos_hint:{'center_y':0.76}
+
+                myLabes:
+                    text:'Desfrute dos nossos serviços'
+                    font_style: 'H4'
+                    font_size: '9sp'
+                    text_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos_hint:{'center_y':0.72}
+
+                myInputs:
+                    hint_text:'Nome do Usuário'
+                    icon_right: 'account'
+                    pos_hint:{'center_x':.5,'center_y':0.65}
+
+                myInputs:
+                    hint_text:'Seu Email'
+                    icon_right: 'email'
+                    pos_hint:{'center_x':.5,'center_y':0.55}
+
+                myInputs:
+                    id:inputpass
+                    hint_text:'Password'
+                    icon_right: 'eye'
+                    pos_hint:{'center_x':.5,'center_y':0.45}
+
+                MDRaisedButton:
+                    id : btn_cadastrar
+                    text:"Cadastrar"
+                    height: "30dp"
+                    md_bg_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos:root.ids.inputpass.pos
+                    pos_hint:{'center_y':.35}
+
+                MDTextButton:
+                    text:'Já possui uma conta'
+                    halign:'center'
+                    font_style: 'H6'
+                    font_size: '9sp'
+                    custom_color: 126/255.0, 37/255.0, 217/255.0, 1
+                    pos:root.ids.btn_cadastrar.pos
+                    pos_hint:{'center_y':0.30}
+                    on_press: 
+                        root.manager.current = 'fundo_login'
+                        root.manager.transition.direction = 'right' 
+
+
 
 
 <myLabes@MDLabel>
